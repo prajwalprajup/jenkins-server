@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    // Build Docker image
+                    sh 'docker build -t text-converter-app:latest .'
+                    // (Add deployment steps, e.g., push to Docker Hub or run container, based on your setup)
+                    sh 'docker run -d -p 3000:3000 text-converter-app:latest'
+                }
+            }
+        }
+    }
+}
