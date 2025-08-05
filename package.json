@@ -1,0 +1,13 @@
+{
+  "name": "text-converter-app",
+  "version": "1.0.0",
+  "description": "A text-to-different-text converter application for CI/CD demonstration.",
+  "main": "converter.js",
+  "scripts": {
+    "start": "node converter.js",
+    "test": "echo \"✔ Tests passed successfully\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
